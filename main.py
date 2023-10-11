@@ -5,7 +5,7 @@ from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
 
-bot = Bot(token='6266381981:AAGZMyu1mONTsJVTocmWuoI-RZWfK1LBB3I')
+bot = Bot(token='My token')
 dp = Dispatcher(bot)
 
 
@@ -23,7 +23,7 @@ async def get_weather(message: types.Message):  # Содержит информ�
         # Производим запрос на сайт прогноз погоды с помощью функции requests.get()
         response = requests.get(
             # Получаем запрос API погоды. вставляем переменую в запрос для получения данных о погоде
-            f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&lang=ru&units=metric&appid=3d2245384af4b37b2fdd68ca8d0baa1d")
+            f"http://api.openweathermap.org/data/2.5/weather?q={city_name}&lang=ru&units=metric&appid=mytoken")
         data = response.json()  # Метод который преобразует ответ от сервера в формате JSON в объект python и помещаем ее в переменую data
         city = data["name"]
         cur_temp = data["main"]["temp"]
